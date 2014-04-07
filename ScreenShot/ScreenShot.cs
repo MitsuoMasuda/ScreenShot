@@ -33,10 +33,9 @@ namespace ScreenShot
 				Graphics graphics = Graphics.FromImage(bitmap);
 				//画面全体をコピーする
 				graphics.CopyFromScreen(new Point(0, 0), new Point(0, 0), bitmap.Size);
-				//解放
 				graphics.Dispose();
-				bitmap.Save(@"C:\temp\" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".gif", System.Drawing.Imaging.ImageFormat.Gif);
 
+				bitmap.Save(this._saveFolder + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".gif", System.Drawing.Imaging.ImageFormat.Gif);
 				bitmap.Dispose();
 			}
 		}
